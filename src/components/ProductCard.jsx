@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { Star } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import React, {useState} from "react";
+import {Star} from "lucide-react";
+import {Card, CardContent, CardFooter, CardHeader,} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Badge} from "@/components/ui/badge";
 import Loading from "@/components/Loading"; // make sure this exists
 
 const ProductCard = ({ product }) => {
   const { name, price, image, description, rating, category } = product;
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const toTitleCase =  (str)  => {
+        return str?.replace(/\w\S*/g, (txt) =>
+            txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
+        );
+    }
   return (
     <Card className="h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative overflow-hidden h-64 flex items-center justify-center bg-gray-100">
@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
           }`}
         />
         <Badge className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-800">
-          {category}
+          {toTitleCase(category)}
         </Badge>
       </div>
 
