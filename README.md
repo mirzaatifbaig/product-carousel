@@ -8,7 +8,7 @@
 <br />
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=react,tailwind,vite,radixjs,vercel,webstorm,html,css" />
+  <img src="https://skillicons.dev/icons?i=react,tailwind,vite,vercel,webstorm,html,css" />
 </div>
 
 ---
