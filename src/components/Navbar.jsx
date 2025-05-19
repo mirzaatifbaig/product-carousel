@@ -19,7 +19,6 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-sm py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Top row with logo and search */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
             <ShoppingBag size={40} className="text-gray-900 mr-3" />
@@ -39,7 +38,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Cart and Account - always visible */}
           <div className="flex items-center space-x-4">
             <a
               href="#"
@@ -59,7 +57,6 @@ const Navbar = () => {
               <span className="text-xs mt-1">Cart</span>
             </a>
 
-            {/* Mobile menu button */}
             <button
               className="md:hidden ml-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -69,59 +66,41 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Bottom row with navigation */}
         <nav className={`${isMobileMenuOpen ? "block" : "hidden"} md:block`}>
           <ul className="flex flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-            <li>
-              <a
-                href="#"
-                className="flex flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
-              >
-                <Home size={20} className="mr-2 md:mr-0" />
-                <span className="text-sm md:text-xs md:mt-1">Home</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
-              >
-                <Package size={20} className="mr-2 md:mr-0" />
-                <span className="text-sm md:text-xs md:mt-1">Products</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
-              >
-                <LayoutGrid size={20} className="mr-2 md:mr-0" />
-                <span className="text-sm md:text-xs md:mt-1">Categories</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
-              >
-                <Tag size={20} className="mr-2 md:mr-0" />
-                <span className="text-sm md:text-xs md:mt-1">Deals</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
-              >
-                <Heart size={20} className="mr-2 md:mr-0" />
-                <span className="text-sm md:text-xs md:mt-1">Wishlist</span>
-              </a>
-            </li>
+            <NavGrid title={"Home"}>
+              <Home size={20} className="mr-2 md:mr-0" />
+            </NavGrid>
+            <NavGrid title={"Products"}>
+              <Package size={20} className="mr-2 md:mr-0" />
+            </NavGrid>
+            <NavGrid title={"Categories"}>
+              <LayoutGrid size={20} className="mr-2 md:mr-0" />
+            </NavGrid>
+            <NavGrid title={"Deals"}>
+              <Tag size={20} className="mr-2 md:mr-0" />
+            </NavGrid>
+            <NavGrid title={"Wishlist"}>
+              <Heart size={20} className="mr-2 md:mr-0" />
+              <span className="text-sm md:text-xs md:mt-1"></span>
+            </NavGrid>
           </ul>
         </nav>
       </div>
     </header>
   );
 };
-
+const NavGrid = ({ title, children }) => {
+  return (
+    <li>
+      <a
+        href="#"
+        className="flex hover:opacity-50 hover:bg-gray-50 rounded flex-row md:flex-col items-center text-gray-700 hover:text-gray-900"
+      >
+        {children}
+        <span className="text-sm md:text-xs md:mt-1">{title}</span>
+      </a>
+    </li>
+  );
+};
 export default Navbar;
