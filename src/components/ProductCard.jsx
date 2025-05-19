@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Star } from "lucide-react";
 import {
   Card,
@@ -8,17 +8,27 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Loading from "@/components/Loading"; // make sure this exists
 
 const ProductCard = ({ product }) => {
   const { name, price, image, description, rating, category } = product;
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <Card className="h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative overflow-hidden h-64">
+      <div className="relative overflow-hidden h-64 flex items-center justify-center bg-gray-100">
+        {!imageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center z-10 bg-white">
+            <Loading />
+          </div>
+        )}
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          onLoad={() => setImageLoaded(true)}
+          className={`w-full h-full object-cover object-center transition-opacity duration-500 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
         <Badge className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-800">
           {category}
