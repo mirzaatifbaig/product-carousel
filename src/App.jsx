@@ -9,7 +9,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto py-8 px-4 space-y-12">
+      <main className="flex-1 py-8 px-4 space-y-12">
         <section className="bg-indigo-600 rounded-xl shadow-lg overflow-hidden">
           <div className="px-6 py-12 md:py-16 md:px-12 flex flex-col md:flex-row items-center justify-between text-white">
             <div className="md:w-2/3 text-center md:text-left mb-8 md:mb-0">
