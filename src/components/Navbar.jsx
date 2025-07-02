@@ -18,9 +18,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm py-4 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between mb-4">
+    <header className="bg-white max-w-full shadow-sm py-4 sticky top-0 z-50">
+      <div className="mx-auto px-4">
+        <div className="flex justify-between mb-4">
           <div className="flex items-center">
             <ShoppingBag size={40} className="text-gray-900 mr-3" />
             <h1 className="text-2xl font-bold text-gray-900">Shop</h1>

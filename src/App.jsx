@@ -6,12 +6,11 @@ import { Button } from "@/components/ui/button";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen w-full bg-gray-50 flex flex-col">
       <Navbar />
-
-      <main className="flex-1 py-8 px-4 space-y-12">
+      <main className="flex-1 py-8 space-y-12">
         <section className="bg-indigo-600 rounded-xl shadow-lg overflow-hidden">
-          <div className="px-6 py-12 md:py-16 md:px-12 flex flex-col md:flex-row items-center justify-between text-white">
+          <div className="px-6 py-12 md:py-16 md:px-12 flex flex-col md:flex-row justify-between text-white">
             <div className="md:w-2/3 text-center md:text-left mb-8 md:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
                 Summer Collection 2025
@@ -27,7 +26,7 @@ function App() {
                 Shop Now
               </Button>
             </div>
-            <div className="md:w-1/3 flex justify-center">
+            <div className="md:w-1/3 flex">
               <img
                 src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop"
                 alt="Featured product"
@@ -47,7 +46,7 @@ function App() {
       </main>
 
       <footer className="bg-gray-800 text-white py-4">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className=" mx-auto text-center">
           © 2025 ShopSmart. All rights reserved.
         </div>
       </footer>
